@@ -1,0 +1,43 @@
+$primaryFont-fallback: "Helvetica";
+$primaryFont: "arial", $primaryFont-fallback;
+
+@mixin txt($fontFamily: $primaryFont, $fontSize: 1.6, $lineHeight: 1.6, $lineSpace: 0, $textTransform: initial, $fallback: 'sans-serif') {
+    font-family: $fontFamily, $fallback;
+    // IE fontsize fallback
+    font-size: calc(0.625 * (#{$fontSize}rem));
+    line-height: calc(0.625 * (#{$lineHeight}rem));
+    letter-spacing: calc(0.625 * (#{$lineSpace}rem));
+    text-transform: $textTransform;
+}
+
+@mixin dropDownIconText {
+    @include txt($primaryFont, 1.8, 1.8);
+}
+
+@mixin h1 {
+    @include txt($primaryFont, 6, 6, 0.1);
+}
+
+@mixin h2 {
+    @include txt($primaryFont, 5, 4.5);
+}
+
+@mixin h3 {
+    @include txt($primaryFont, 4, 4);
+}
+
+@mixin h4 {
+    @include txt($primaryFont, 5, 3.5);
+}
+
+@mixin h5 {
+    @include txt($primaryFont, 2, 2.5);
+}
+
+@mixin p1 {
+    @include txt($primaryFont, 1.6, 2);
+}
+
+@mixin p2 {
+    @include txt($primaryFont, 1.4, 1.8);
+}

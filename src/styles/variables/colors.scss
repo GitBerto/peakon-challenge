@@ -1,0 +1,11 @@
+$white: #fff;
+$black: #363636;
+$darkGrey: #9CA5A4;
+$grey: #E1E0DE;
+$lightGrey: #F8F7F5; 
+$green: #60BB87;
+$aquamarine: #7ED1C6;
+
+@mixin lightenBG($color, $percentage: 10%){
+    background: lighten($color, $percentage);
+}

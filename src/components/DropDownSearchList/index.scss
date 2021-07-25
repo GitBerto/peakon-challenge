@@ -1,0 +1,135 @@
+@import 'styles/variables.scss';
+$result-container-height: 169px;
+
+.drop-down {
+    background: $lightGrey;
+    padding: 20px;
+
+    &__search {
+        margin: 0 0 20px 0;
+    }
+
+    &__input-container {
+        position: relative;
+    }
+
+    &__arrow {
+        border: solid;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        position: absolute;
+        top: 16px;
+        right: 20px;
+
+        &--up {
+            border-color: $darkGrey;
+            transform: rotate(-135deg);
+        }
+
+        &--down {
+            border-color: $black;
+            transform: rotate(45deg);
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__label {
+        @include p2();
+        display: block;
+    }
+
+    &__results {
+        background: $white;
+        border: 1px solid $grey;
+        border-radius: 10px;
+        display: none;
+        max-height: $result-container-height;
+        overflow-y: scroll;
+        
+        &--show {
+            display: block;
+        }
+
+        &::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        &::-webkit-scrollbar-track {
+            box-shadow: transparent;;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $darkGrey;
+            border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: $darkGrey;
+        }
+    }
+
+    &__item {
+        background:$white;
+        border: none;
+        border-radius: 0;
+        display: block;
+        padding: 0;
+        margin: 0 10px 0 20px;
+        text-align: left;
+        width: calc(100% - 30px);
+
+        &:nth-child(n+2) & {
+            &-container {
+                border-top: 1px solid $grey;
+            }
+        }
+
+        &:hover {
+            @include lightenBG($aquamarine, 20%);
+            cursor: pointer;
+        }
+
+        &--selected {
+            @include lightenBG($aquamarine, 20%);
+        }
+    }
+
+    &__item-container {
+        display: flex;
+        vertical-align: middle;
+        align-items: center;
+        padding: 20px 10px;
+    }
+
+    &__item-icon {
+        @include p1();
+        align-items: center;
+        background: $aquamarine;
+        border-radius: 4px;
+        color: $white;
+        margin: 0 10px 0 0;
+        padding: 10px 0;
+        width: 40px;
+        text-align: center;
+        text-align: center;
+    }
+
+    &__item-fullname,
+    &__item-email {
+        display: block;
+    }
+
+    &__item-fullname {
+        @include h5();
+    }
+
+    &__item-email {
+        @include p2();
+        color: $darkGrey;
+    }
+
+}

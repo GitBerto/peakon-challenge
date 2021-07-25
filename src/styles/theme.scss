@@ -1,0 +1,40 @@
+@import './variables.scss';
+
+body {
+    margin: 0;
+
+    @media screen and (min-width: $tablet) {
+        margin: 0 auto;
+        width: 400px;
+    }
+
+    @media screen and (min-width: $desktop-small) {
+        width: 780px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        width: 1024px;
+    }
+
+}
+
+*{
+    box-sizing: border-box;
+    color: $black;
+}
+
+// Inputs global styles
+input[type=text],
+input[type=number],
+input[type=password] {
+    border: 2px solid $grey;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+
+    &:focus {
+        outline: none;
+        border: 2px solid $green;
+        box-shadow: 0 0 3px $green;
+    }
+}
