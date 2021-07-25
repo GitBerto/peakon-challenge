@@ -2,7 +2,7 @@
  
 Welcome to the Peakon challenge test. 
 
-## Set up
+## Setup
 
 This repo is based on Create React App and Redux/Thunk.
 
